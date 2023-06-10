@@ -1,0 +1,115 @@
+{
+  "targetFolder": "H:\\System\\Downloads",
+  "testFolder": "H:\\System\\Desktop\\TestMover",
+  "testMode": true,
+  "formats": [
+    {
+      "name": "Image",
+      "folder": "Images",
+      "extensions": [
+        "jpg",
+        "png",
+        "gif",
+        "bmp",
+        "jpeg",
+        "tiff",
+        "svg",
+        "ico",
+        "psd",
+        "ai",
+        "raw"
+      ]
+    },
+    {
+      "name": "Video",
+      "folder": "Videos",
+      "extensions": [
+        "mp4",
+        "avi",
+        "mov",
+        "wmv",
+        "flv",
+        "mkv",
+        "webm",
+        "vob",
+        "m4v",
+        "3gp",
+        "3g2",
+        "m2v",
+        "m4p",
+        "mpg",
+        "mpeg"
+      ]
+    },
+    {
+      "name": "Executable",
+      "folder": "Executables",
+      "extensions": [
+        "exe",
+        "msi",
+        "bat",
+        "cmd"
+      ]
+    },
+    {
+      "name": "Document",
+      "folder": "Documents",
+      "extensions": [
+        "doc",
+        "docx",
+        "pdf",
+        "txt",
+        "rtf",
+        "odt",
+        "ods",
+        "odp",
+        "xls",
+        "xlsx",
+        "ppt",
+        "pptx",
+        "pps",
+        "csv",
+        "xml"
+      ]
+    },
+    {
+      "name": "Compressed",
+      "folder": "Compressed",
+      "extensions": [
+        "zip",
+        "rar",
+        "7z",
+        "tar",
+        "gz",
+        "tgz",
+        "bz2",
+        "xz",
+        "lzma"
+      ]
+    },
+    {
+      "name": "Disc Image",
+      "folder": "Disc Images",
+      "extensions": [
+        "iso",
+        "img",
+        "dmg"
+      ]
+    },
+    {
+      "name": "Torrent",
+      "folder": "Torrents",
+      "extensions": [
+        "torrent",
+        "magnet"
+      ]
+    },
+    {
+      "name": "Other",
+      "folder": "Other",
+      "extensions": [
+        "default"
+      ]
+    }
+  ]
+}

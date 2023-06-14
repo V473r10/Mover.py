@@ -3,9 +3,6 @@
 ## Description
 This is a simple python script to organize files in a directory. It will move files into folders based on their file extension. It is customizable to your needs.
 
-### Test mode
-Test mode takes a different directory and, before organizing it, creates a file for each extension in the directory. This is useful for testing the script before using it on your actual files.
-
 ## Requirements
 - Python 3.10 or higher
 - A computer
@@ -29,3 +26,6 @@ The settings file is a JSON file that contains the settings for the script. The 
   - `name`: The name of the format
   - `folder`: The name of the folder to move the files to
   - `extensions`: A list of extensions for the format
+
+### Test mode
+Test mode takes a different directory and, before organizing it, creates an empty file inside for each extension. This is useful for testing the script before using it on your actual files.

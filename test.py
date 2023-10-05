@@ -1,5 +1,7 @@
 import json
 import os
+import platform
+from main import separator
 
 settings = json.load(open('settings.json'))
 test_folder = settings['testFolder']
@@ -8,8 +10,8 @@ test_folder = settings['testFolder']
 def make_folders():
     for format_name in settings['formats']:
         folder = format_name['folder']
-        if not os.path.exists(test_folder + '\\' + folder):
-            os.makedirs(test_folder + '\\' + folder)
+        if not os.path.exists(f'{test_folder}{separator}{folder}'):
+            os.makedirs(f'{test_folder}{separator}{folder}')
 
 
 def make_files():
@@ -17,7 +19,7 @@ def make_files():
         folder = format_name['folder']
         for extension in format_name['extensions']:
             file_name = 'test.' + extension
-            file_path = test_folder + '\\' + file_name
+            file_path = f'{test_folder}{separator}{file_name}'
             open(file_path, 'a').close()
 
 

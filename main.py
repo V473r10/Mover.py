@@ -1,11 +1,19 @@
 import json
 import os
 import pathlib
+import platform
 
 settings = json.load(open('settings.json'))
 target_folder = settings['targetFolder']
 
 counts = {}
+
+separator = ''
+
+if platform.system() != 'Windows':
+    separator = '/'
+else:
+    separator = '\\'
 
 
 def initialize_counts_object():
@@ -31,9 +39,9 @@ def get_file_format(file):
 
 
 def process_other_files(file):
-    if not os.path.exists(target_folder + '\\Others'):
-        os.makedirs(target_folder + '\\Others')
-    new_path = target_folder + '\\Others\\' + file
+    if not os.path.exists(target_folder + f'{separator}Others'):
+        os.makedirs(target_folder + f'{separator}Others')
+    new_path = target_folder + f'{separator}Others{separator}' + file
     os.rename(file_path, new_path)
 
 
@@ -41,10 +49,11 @@ def process_files():
     for format_object in settings['formats']:
         if file_format == format_object['name']:
             folder = format_object['folder']
-            new_file_path = target_folder + '\\' + folder + '\\' + _file
+            # new_file_path = target_folder + '\\' + folder + '\\' + _file
+            new_file_path = f'{target_folder}{separator}{folder}{separator}{_file}'
             # Move file to folder
-            if not os.path.exists(target_folder + '\\' + folder):
-                os.makedirs(target_folder + '\\' + folder)
+            if not os.path.exists(f'{target_folder}{separator}{folder}'):
+                os.makedirs(f'{target_folder}{separator}{folder}')
             os.rename(file_path, new_file_path)
             counts[format_object['name']] += 1
             break
@@ -67,7 +76,7 @@ if __name__ == '__main__':
 
     for _file in get_files():
         file_format = get_file_format(_file)
-        file_path = target_folder + '\\' + _file
+        file_path = f'{target_folder}{separator}{_file}'
         if file_format is None:
             process_other_files(_file)
 

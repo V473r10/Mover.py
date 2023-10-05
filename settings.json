@@ -1,6 +1,6 @@
 {
-  "targetFolder": "H:\\System\\Downloads",
-  "testFolder": "H:\\System\\Desktop\\TestMover",
+  "targetFolder": "\\home\\v473r10\\Desktop",
+  "testFolder": "/home/v473r10/Desktop/test-mover",
   "testMode": true,
   "formats": [
     {

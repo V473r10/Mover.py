@@ -2,6 +2,7 @@ import json
 import os
 import pathlib
 import platform
+import sys
 
 settings = json.load(open('settings.json'))
 target_folder = settings['targetFolder']
@@ -14,6 +15,8 @@ if platform.system() != 'Windows':
     separator = '/'
 else:
     separator = '\\'
+
+print(sys.argv)
 
 
 def initialize_counts_object():
@@ -68,11 +71,12 @@ def print_counts():
 if __name__ == '__main__':
     initialize_counts_object()
 
-    if settings['testMode']:
-        import test
-        test.make_folders()
-        test.make_files()
-        target_folder = settings['testFolder']
+    if len(sys.argv) > 1:
+        if sys.argv[1] == '--test':
+            import test
+            test.make_folders()
+            test.make_files()
+            target_folder = settings['testFolder']
 
     for _file in get_files():
         file_format = get_file_format(_file)

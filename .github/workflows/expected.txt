@@ -1,0 +1,10 @@
+Files sorted:
+Image : 11
+Video : 15
+Executable : 4
+Document : 15
+Compressed : 9
+Disc Image : 3
+Torrent : 2
+Other : 1
+Others : 0

@@ -1,0 +1,36 @@
+name: Python Script Test
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.12'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+#        pip install -r requirements.txt
+
+    - name: Run script and validate output
+      run: python main.py --test | tee output.txt
+      shell: bash
+      working-directory: ../../
+
+    - name: Check output
+      run: |
+        grep -F -f expected.txt output.txt
+        if [ $? -eq 0 ]
+        then
+          echo "Output is valid"
+        else
+          echo "Output is invalid"
+          exit 1
+        fi

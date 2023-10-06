@@ -22,7 +22,7 @@ jobs:
     - name: Run script and validate output
       run: python main.py --test | tee output.txt
       shell: bash
-      working-directory: ../../Mover.py
+      working-directory: ${GITHUB_WORKSPACE}
 
     - name: Check output
       run: |
